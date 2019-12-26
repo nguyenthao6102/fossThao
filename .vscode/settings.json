@@ -4,5 +4,8 @@
         "-ExecutionPolicy",
         "Bypass"
     ],
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "python.linting.pylintArgs": [
+        "--load-plugins=pylint_django"
+   ]
 }
