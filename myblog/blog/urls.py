@@ -10,7 +10,7 @@ urlpatterns = [
         template_name = 'blog/blog.html',
         context_object_name = 'Posts',
         #Trang hiển thị 10 bài viết, nếu hơn thì hiển thị tiếp theo
-        paginate_by =10)
+        paginate_by =5)
         ,name='blog'),
     path('<int:pk>/', views.post, name='post'),#gọi hàm post trong views
 ]
