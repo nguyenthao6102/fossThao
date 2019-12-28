@@ -10,7 +10,42 @@
     <style>
         html, body{
             height: 100%;
-            background-color: #f6f6f6;
+        }
+        h1{
+            color: white;
+            text-align: center;
+            margin-top: 40px;
+            font-family: Palatino;
+        }
+        .container-fluid>div{
+            background-color: #029da2;
+        }
+        footer .container-fluid > center > a{
+            text-decoration: none;
+            padding-right: 5px;
+            padding-left: 5px;
+        }
+        .container-fluid .row .col-sm-2 > p > a{
+            color: white; text-decoration: none; margin-left: 10px;
+        }
+        .container-fluid .row .col-sm-2 > p > a:hover{
+            color: red;
+        }
+        .container-fluid > center > a{
+            background-color: #2f3838;
+        }
+        .container-fluid > center > a:hover{
+            color: lavender;
+        }
+        .nav-link{
+            background-color: white;
+        }
+        .nav-link:hover{
+            background-color: #029da2;
+            color: white;
+        }
+        .row .col-sm-4 > a:hover{
+            color:green;
         }
     </style>
 </head>
@@ -21,19 +56,19 @@
                 <center><img src="{% static 'images/logo.jpg' %}" class="reponsive-img" style="max-height:150px"/></center>
             </div>
             <div class = "col-sm-8">
-                <center><h1>Blog làm từ python django</h1></center>
+                <center><h1>Liệt Bàn Phím Blog</h1></center>
             </div>
-            <div class = "col-sm-2">
+            <div class = "col-sm-2" style="color: white;">
                 {% if user.username %}
-                    <p>Xin chào {{user.username}}|<a href="{% url 'logout' %}">Đăng xuất</a></p>
+                    <p>Xin chào {{user.username}}<a href="{% url 'logout' %}" >Đăng xuất</a></p>
                 {% else %}
-                     <p><a href="{% url 'register' %}">Đăng ký</a>|<a href="{% url 'login' %}">Đăng nhập</a></p>
+                     <p><a href="{% url 'register' %}" >Đăng ký</a><a href="{% url 'login' %}">Đăng nhập</a></p>
                 {% endif %}
             </div>
         </div>
         <br>
-        <div class = "row">
-            <div class = "col-sm-2">
+        <div class = "row" style="background-color: white;">
+            <div class = "col-sm-2" style="padding: 0px;">
                 <div class = "bs-sliderbar" style="background-color: #fff">
                     <nav class = "nav-flex-cloumn">
                         <a class="nav-link" href="/">Thông tin cá nhân</a>
@@ -51,9 +86,9 @@
             </div>
         </div>
     </div>
-     <footer>
+     <footer style="background-color: #2f3838;">
         <div class="container-fluid">
-            <a href="#">Facebook</a>|<a href="#">Twitter</a>|<a href="#">Google+</a>
+            <center><a href="#">Facebook</a><a href="#">Twitter</a><a href="#">Google+</a></center>
         </div>
     </footer>
 </body>

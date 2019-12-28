@@ -3,13 +3,20 @@
 {% block title  %}Blog{% endblock  %}
 
 {% block content %}
-    {% for post  in Posts %}
-        <h4>{{post.date|date:"d-m-Y"}}<a href="/blog/{{post.id}}">{{post.title}}</a></h4>
-        <img src="{{post.image.url}}" width="300px" height="200px"/>
-    {% endfor %}
+        {% for post  in Posts %}
+            <div class="row" style="background-color: white;">
+                <div class="col-sm-4" style="padding-bottom: 10px;">
+                    <a href="/blog/{{post.id}}"><img src="{{post.image.url}}" width="300px" height="200px"/></ahref="/blog/{{post.id}}">
+                </div>
+                <div class="col-sm-4">
+                    <a href="/blog/{{post.id}}" style="font-size: 25px; text-decoration: none;">{{post.title}}</a>
+                    <p style="margin-top: 50px; color: gray;">{{post.date|date:"d-m-Y"}}</p>
+                </div>
+            </div>
+        {% endfor %}
     <br>
     {% if page_obj.has_next %}
         <a href="{{request.path}}?page={{page_obj.next_page_number}}">Tiếp theo</a>
     {% else %}
     {% endif %}
-{% endblock %}  
+{% endblock %}

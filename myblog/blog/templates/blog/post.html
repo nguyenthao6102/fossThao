@@ -3,14 +3,15 @@
 {% block title  %}{{post.title}}{% endblock  %}
 
 {% block content %}
-   <h3><a href='{% url 'post' post.id %}'>{{post.title}}</a></h3>
-   <img src="{{post.image.url}}" width="300px" height="200px"/>
+   <h3>{{post.title}}</h3>
    <h6>on {{post.date}}</h6>
    {{post.body|safe|linebreaks}}
    {% for comment in post.comments.all %}
+          <hr>
         <h4><strong>{{comment.author}}</strong></h4>
         <h6><p>{{comment.date}}</p></h6>
         <p>{{comment.body|linebreaks}}</p>
+        <hr>
    {% endfor %}
    {% if user.username%}
         <form action="{% url 'post' post.id %}" method='POST'>
